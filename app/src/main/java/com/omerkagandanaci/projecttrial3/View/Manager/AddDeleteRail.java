@@ -21,5 +21,6 @@ public class AddDeleteRail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_delete_rail);
         init();
+
     }
 }
