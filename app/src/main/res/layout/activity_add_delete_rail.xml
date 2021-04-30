@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Manager.AddDeleteRail">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AddDeleteRail"
+        android:textSize="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar"/>
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbarusermain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+    <Button
+        android:id="@+id/adddeleterailbutton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Add Rail"
+        android:layout_marginLeft="200dp"
+        android:backgroundTint="#C54AFF"/>
+    <Button
+        android:id="@+id/adddeleterailbutton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="#C54AFF"
+        android:layout_toRightOf="@+id/adddeleterailbutton1"
+        android:layout_marginLeft="100dp"
+        android:text="Delete Rail"/>
+    <EditText
+        android:id="@+id/edittext1addrail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:hint="StartingPoint"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:hint="EndingingPoint"
+        android:layout_toRightOf="@id/edittext1addrail"
+        android:layout_marginLeft="40sp"/>
+
+
+
+</RelativeLayout>

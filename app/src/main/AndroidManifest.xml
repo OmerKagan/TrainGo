@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.omerkagandanaci.projecttrial3">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ProjectTrial3">
+        <activity android:name=".View.User.Confirmation" />
+        <activity android:name=".View.User.Payment" android:parentActivityName=".View.User.ChooseSeat"/>
+        <activity android:name=".View.User.ChooseSeat" android:parentActivityName=".View.User.ListTravels"/>
+        <activity android:name=".View.User.ListTravels" android:parentActivityName=".View.User.UserMainActivity"/>
+        <activity android:name=".View.User.Faq" android:parentActivityName=".View.User.UserMainActivity"/>
+        <activity android:name=".View.User.HowToUse" android:parentActivityName=".View.User.UserMainActivity"/>
+        <activity android:name=".View.User.MyPoints" android:parentActivityName=".View.User.UserMainActivity"/>
+        <activity android:name=".View.User.ChangePassword" android:parentActivityName=".View.User.UserMainActivity"/>
+        <activity android:name=".View.User.AddPassenger" android:parentActivityName=".View.User.MyPassengers"/>
+        <activity android:name=".View.User.MyPassengers" android:parentActivityName=".View.User.UserMainActivity"/>
+        <activity android:name=".View.User.MyInformation" android:parentActivityName=".View.User.UserMainActivity"/>
+        <activity android:name=".View.User.CurrentTravel" android:parentActivityName=".View.User.UserMainActivity"/>
+        <activity android:name=".View.User.OldTickets" android:parentActivityName=".View.User.UserMainActivity"/>
+        <activity android:name=".View.User.FutureTickets" android:parentActivityName=".View.User.UserMainActivity"/>
+        <activity android:name=".View.User.UserMainActivity" />
+        <activity android:name=".View.User.SignUpActivity" android:parentActivityName=".View.MainActivity"/>
+        <activity android:name=".View.ForgotPasswordActivity" android:parentActivityName=".View.MainActivity"/>
+        <activity android:name=".View.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".View.Manager.AddTrain" android:parentActivityName=".View.Manager.AdminMain"
+            android:theme="@style/Theme.NoBar"/>
+        <activity android:name=".View.Manager.AddDeleteRail" android:parentActivityName=".View.Manager.AdminMain"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.NoBar"/>
+        <activity android:name=".View.Manager.AddTravel" android:parentActivityName=".View.Manager.TravelSettings"
+            android:theme="@style/Theme.NoBar"/>
+        <activity android:name=".View.Manager.AdminMain"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.NoBar"/>
+        <activity android:name=".View.Manager.ChangeTravel" android:parentActivityName=".View.Manager.TravelSettings"
+            android:theme="@style/Theme.NoBar"/>
+        <activity android:name=".View.Manager.Comments" android:parentActivityName=".View.Manager.AdminMain"
+            android:theme="@style/Theme.NoBar"/>
+        <activity android:name=".View.Manager.TravelSettings" android:parentActivityName=".View.Manager.AdminMain"
+            android:theme="@style/Theme.NoBar"/>
+    </application>
+
+</manifest>
+
+
+
+

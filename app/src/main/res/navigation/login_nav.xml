@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_nav"
+    app:startDestination="@id/userFragment">
+
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.omerkagandanaci.projecttrial3.View.User.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user" />
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="com.omerkagandanaci.projecttrial3.View.Manager.AdminFragment"
+        android:label="fragment_admin"
+        tools:layout="@layout/fragment_admin" />
+</navigation>

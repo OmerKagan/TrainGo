@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.User.MyTicketsFragment">
+
+    <Button
+        android:id="@+id/buttonOldTickets"
+        android:layout_width="320dp"
+        android:layout_height="54dp"
+        android:background="@drawable/round_corners"
+        android:backgroundTint="#C4C4C4"
+        android:foregroundTint="@color/black"
+        android:text="@string/old_tickets"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.593"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonFutureTickets"
+        app:layout_constraintVertical_bias="0.184"
+        app:strokeColor="#000000" />
+
+    <Button
+        android:id="@+id/buttonFutureTickets"
+        android:layout_width="320dp"
+        android:layout_height="54dp"
+        android:background="@drawable/round_corners"
+        android:backgroundTint="#C4C4C4"
+        android:text="@string/future_tickets"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.593"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCurrentTravel"
+        app:layout_constraintVertical_bias="0.115" />
+
+    <Button
+        android:id="@+id/buttonCurrentTravel"
+        android:layout_width="320dp"
+        android:layout_height="54dp"
+        android:background="@drawable/round_corners"
+        android:backgroundTint="#C4C4C4"
+        android:text="@string/current_travel"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.593"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.302" />
+</androidx.constraintlayout.widget.ConstraintLayout>

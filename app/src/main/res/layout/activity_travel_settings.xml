@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Manager.TravelSettings">
+    <TextView
+        android:id="@+id/texttravel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+    <Button
+        android:id="@+id/gotoaddtravel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/texttravel"
+        android:layout_marginLeft="40sp"
+        android:layout_marginRight="40sp"
+        android:layout_marginTop="40sp"
+        android:text="Add Travel"/>
+    <Button
+        android:id="@+id/gotochangetravel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/texttravel"
+        android:layout_marginLeft="40sp"
+        android:layout_marginRight="40sp"
+        android:layout_marginTop="40sp"
+        android:text="Change Travel"
+        />
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar"/>
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_nav"
+    app:startDestination="@id/searchFragment">
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.omerkagandanaci.projecttrial3.View.User.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/myTicketsFragment"
+        android:name="com.omerkagandanaci.projecttrial3.View.User.MyTicketsFragment"
+        android:label="My Tickets"
+        tools:layout="@layout/fragment_my_tickets" />
+    <fragment
+        android:id="@+id/myAccountFragment"
+        android:name="com.omerkagandanaci.projecttrial3.View.User.MyAccountFragment"
+        android:label="My Account"
+        tools:layout="@layout/fragment_my_account" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.omerkagandanaci.projecttrial3.View.User.HelpFragment"
+        android:label="Help"
+        tools:layout="@layout/fragment_help" />
+</navigation>

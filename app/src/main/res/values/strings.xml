@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">TrainGo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="first_fragment">First Fragment</string>
+    <string name="second_fragment">Second Fragment</string>
+    <string name="user">User</string>
+    <string name="admin">Admin</string>
+    <string name="log_n">LogIn</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="new_user">New User ?</string>
+    <string name="password">password</string>
+    <string name="email">email</string>
+    <string name="current_travel">Current Travel</string>
+    <string name="future_tickets">Future Tickets</string>
+    <string name="old_tickets">Old Tickets</string>
+    <string name="add_new_ticket">Add New Ticket</string>
+    <string name="my_old_tickets">My Old Tickets</string>
+    <string name="live_map">Live Map</string>
+    <string name="live_view">Live View</string>
+    <string name="title_activity_bottom_trial">MainActivity</string>
+</resources>
