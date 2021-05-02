@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.omerkagandanaci.projecttrial3.R;
 
@@ -32,5 +33,6 @@ public class SignUpActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 }

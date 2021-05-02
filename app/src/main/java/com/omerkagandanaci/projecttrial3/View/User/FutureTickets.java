@@ -1,14 +1,18 @@
 package com.omerkagandanaci.projecttrial3.View.User;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.omerkagandanaci.projecttrial3.Model.Customer;
+import com.omerkagandanaci.projecttrial3.Model.Passenger;
 import com.omerkagandanaci.projecttrial3.Model.Ticket;
 import com.omerkagandanaci.projecttrial3.R;
 
@@ -17,33 +21,51 @@ import java.util.Date;
 
 public class FutureTickets extends AppCompatActivity {
 
-    ListView listOfFutureTickets;
+    Button addNewTicket;
     ArrayList<Ticket> futureTickets;
-    ArrayAdapter<Ticket> futureAdapter;
+    RecyclerView recyclerView;
+    TicketRecyclerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_future_tickets);
         setTitle("Future Tickets");
-        // Set the ListView
-        listOfFutureTickets = (ListView) findViewById(R.id.ListViewOldTicketList);
+
+        recyclerView = findViewById(R.id.recyclerFutureTickets);
+        initData();
+
+        adapter = new TicketRecyclerAdapter(this, futureTickets);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+        recyclerView.setHasFixedSize(true);
+
+        addNewTicket = findViewById(R.id.buttonAddNewTicket);
+        addNewTicket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FutureTickets.this, UserMainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+    }
+
+    private void initData() {
         futureTickets = new ArrayList<>();
-        futureTickets.add(new Ticket("String fromWhere", "String toWhere", new Date(), new Date(),
-                123, "String seat", new Customer("Ahmet", "279"), 67));
-        futureTickets.add(new Ticket("String fromWhere", "String toWhere", new Date(), new Date(),
-                123, "String seat1", new Customer("Mehmet", "984"), 73));
-
-        futureAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, futureTickets);
-        listOfFutureTickets.setAdapter(futureAdapter);
+        futureTickets.add(new Ticket("Ankara", "Bursa", "02/05/2021", "12.00", "17.00", 1, "2A",
+                new Passenger("Kerem", "Karzaoğlu", "01/01/2001", "12345678998", true), 45.00));
+        futureTickets.add(new Ticket("Ankara", "Bursa", "02/05/2021", "12.00", "17.00", 1, "2B",
+                new Passenger("Mahmut Furkan", "Gön", "01/01/2001", "12345678998", true), 60.00));
+        futureTickets.add(new Ticket("Ankara", "Bursa", "03/05/2021", "12.00", "17.00", 1, "2B",
+                new Passenger("Mahmut Furkan", "Gön", "01/01/2001", "12345678998", true), 60.00));
+        futureTickets.add(new Ticket("Ankara", "Bursa", "04/05/2021", "12.00", "17.00", 1, "2B",
+                new Passenger("Mahmut Furkan", "Gön", "01/01/2001", "12345678998", true), 60.00));
+        futureTickets.add(new Ticket("Ankara", "Bursa", "05/05/2021", "12.00", "17.00", 1, "2B",
+                new Passenger("Mahmut Furkan", "Gön", "01/01/2001", "12345678998", true), 60.00));
 
     }
 
-    public void launchPurchasing(View v){
-        // this part will be edited
-        // according to the purchasing page
-        /*Intent i;
-        i = new Intent(this, MyTicketsFragment.PurchaseTicket.class);
-        startActivity(i);*/
-    }
+
 }

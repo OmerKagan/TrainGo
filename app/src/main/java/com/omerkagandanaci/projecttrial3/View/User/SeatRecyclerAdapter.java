@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -30,7 +31,6 @@ public class SeatRecyclerAdapter extends RecyclerView.Adapter<SeatRecyclerAdapte
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.seat_individual,parent,false);
-
         return new ViewHolder(view);
     }
 
@@ -54,11 +54,13 @@ public class SeatRecyclerAdapter extends RecyclerView.Adapter<SeatRecyclerAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView seatNo;
+        private ImageView seatImage;
         private RelativeLayout relativeLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             seatNo = itemView.findViewById(R.id.textView15);
+            seatImage = itemView.findViewById(R.id.imageView8);
             relativeLayout = itemView.findViewById(R.id.relativeLayoutofSeat);
         }
     }

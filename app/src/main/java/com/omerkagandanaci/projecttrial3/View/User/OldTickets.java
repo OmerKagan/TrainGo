@@ -1,12 +1,15 @@
 package com.omerkagandanaci.projecttrial3.View.User;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.omerkagandanaci.projecttrial3.Model.Customer;
+import com.omerkagandanaci.projecttrial3.Model.Passenger;
 import com.omerkagandanaci.projecttrial3.Model.Ticket;
 import com.omerkagandanaci.projecttrial3.R;
 
@@ -15,24 +18,36 @@ import java.util.Date;
 
 public class OldTickets extends AppCompatActivity {
 
-    ListView listOfOldTickets;
     ArrayList<Ticket> oldTickets;
-    ArrayAdapter<Ticket> oldAdapter;
+    RecyclerView recyclerView;
+    TicketRecyclerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_old_tickets);
         setTitle("Old Tickets");
-        // Set the ListView
-        listOfOldTickets = (ListView) findViewById(R.id.ListViewOldTicketList);
-        oldTickets = new ArrayList<>();
-        oldTickets.add(new Ticket("String fromWhere", "String toWhere", new Date(), new Date(),
-                123, "String seat", new Customer("Ahmet", "279"), 67));
-        oldTickets.add(new Ticket("String fromWhere", "String toWhere", new Date(), new Date(),
-                123, "String seat1", new Customer("Mehmet", "984"), 73));
 
-        oldAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, oldTickets);
-        listOfOldTickets.setAdapter(oldAdapter);
+        recyclerView = findViewById(R.id.recyclerOldTickets);
+        initData();
+
+        adapter = new TicketRecyclerAdapter(this, oldTickets);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+        recyclerView.setHasFixedSize(true);
+    }
+
+    private void initData() {
+        oldTickets = new ArrayList<>();
+        oldTickets.add(new Ticket("Ankara", "Bursa", "02/05/2021", "12.00", "17.00", 1, "2A",
+                new Passenger("Kerem", "Karzaoğlu", "01/01/2001", "12345678998", true), 45.00));
+        oldTickets.add(new Ticket("Ankara", "Bursa", "02/05/2021", "12.00", "17.00", 1, "2B",
+                new Passenger("Mahmut Furkan", "Gön", "01/01/2001", "12345678998", true), 60.00));
+        oldTickets.add(new Ticket("Ankara", "Bursa", "03/05/2021", "12.00", "17.00", 1, "2B",
+                new Passenger("Mahmut Furkan", "Gön", "01/01/2001", "12345678998", true), 60.00));
+        oldTickets.add(new Ticket("Ankara", "Bursa", "04/05/2021", "12.00", "17.00", 1, "2B",
+                new Passenger("Mahmut Furkan", "Gön", "01/01/2001", "12345678998", true), 60.00));
+        oldTickets.add(new Ticket("Ankara", "Bursa", "05/05/2021", "12.00", "17.00", 1, "2B",
+                new Passenger("Mahmut Furkan", "Gön", "01/01/2001", "12345678998", true), 60.00));
     }
 }

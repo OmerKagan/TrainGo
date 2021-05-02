@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -35,13 +36,12 @@ public class ChooseSeat extends AppCompatActivity implements AdapterView.OnItemS
 
         spinner = findViewById(R.id.spinnerCompartment);
 
-        String[] compartments = {"Compartment 1", "Compartment 2", "Compartment 3", "Compartment 4", "Compartment 5"};
+        String[] compartments = {"Compartment: 1", "Compartment: 2", "Compartment: 3", "Compartment: 4", "Compartment: 5"};
         spinner.setOnItemSelectedListener(this);
 
         ArrayAdapter adapterCompartment = new ArrayAdapter(this, android.R.layout.simple_spinner_item, compartments);
         adapterCompartment.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapterCompartment);
-
 
 
         recyclerView = findViewById(R.id.recyclerSeat);
@@ -74,7 +74,7 @@ public class ChooseSeat extends AppCompatActivity implements AdapterView.OnItemS
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(this, "Selected: " + (position + 1), Toast.LENGTH_LONG );
+        Toast.makeText(this, "Selected Compartment : " + (position + 1), Toast.LENGTH_LONG ).show();
     }
 
     @Override
