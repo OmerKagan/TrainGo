@@ -45,6 +45,7 @@ public class SeatRecyclerAdapter extends RecyclerView.Adapter<SeatRecyclerAdapte
                 @Override
                 public void onClick(View v) {
                     holder.relativeLayout.setBackgroundColor(Color.rgb(234, 188, 255));
+
                 }
             });
         }
@@ -61,7 +62,7 @@ public class SeatRecyclerAdapter extends RecyclerView.Adapter<SeatRecyclerAdapte
         return seats.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView seatNo;
         private ImageView seatImage;
         private RelativeLayout relativeLayout;
@@ -72,6 +73,8 @@ public class SeatRecyclerAdapter extends RecyclerView.Adapter<SeatRecyclerAdapte
             seatImage = itemView.findViewById(R.id.imageView8);
             relativeLayout = itemView.findViewById(R.id.relativeLayoutofSeat);
         }
+
+
     }
 
 }

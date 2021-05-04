@@ -160,26 +160,28 @@ public class TicketRecyclerAdapter extends RecyclerView.Adapter<TicketRecyclerAd
             clickedItemPosition = position;
         }
 
-    }
-    private void showDialogMessage() {
+        private void showDialogMessage() {
 
-        AlertDialog.Builder dialog = new AlertDialog.Builder(context);
-        dialog.setTitle("Ticket Cancellation");
-        dialog.setMessage("Do you want to cancel this ticket?");
-        dialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-        dialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+            AlertDialog.Builder dialog = new AlertDialog.Builder(context);
+            dialog.setTitle("Ticket Cancellation");
+            dialog.setMessage("Do you want to cancel this ticket?");
+            dialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+            dialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    deleteItem(clickedItemPosition);
+                }
+            });
+            dialog.show();
+            dialog.create();
+        }
 
-            }
-        });
-        dialog.show();
-        dialog.create();
+
     }
 
 
