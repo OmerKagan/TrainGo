@@ -31,7 +31,7 @@ public class Payment extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerTicket);
         initData();
 
-        adapter = new TicketRecyclerAdapter(this, tickets);
+        adapter = new TicketRecyclerAdapter(this, tickets, 0);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);

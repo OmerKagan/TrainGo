@@ -172,7 +172,6 @@ public class SearchFragment extends Fragment implements DatePickerDialog.OnDateS
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(getActivity().getApplicationContext(), "Selected Passengers: ", Toast.LENGTH_SHORT).show();
     }
 
     @Override

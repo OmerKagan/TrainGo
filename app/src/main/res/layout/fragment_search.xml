@@ -6,31 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".View.User.SearchFragment">
 
-    <TextView
-        android:id="@+id/selectPassangers"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="350dp"
-        android:layout_marginEnd="32dp"
-        android:background="@color/light_purple"
-        android:hint="Select Passengers"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
     <Button
         android:id="@+id/buttonSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="130dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="45dp"
         android:layout_marginEnd="130dp"
         android:text="SEARCH TRAINS"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectPassangers" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerPassengers" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -61,14 +47,13 @@
             android:textSize="18sp" />
     </RadioGroup>
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/fromWhere"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="96dp"
-        android:background="@color/light_purple"
         android:ems="10"
         android:hint="from"
         android:inputType="textPersonName"
@@ -76,14 +61,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/toWhere"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="96dp"
-        android:background="@color/light_purple"
         android:ems="10"
         android:hint="to"
         android:inputType="textPersonName"
@@ -98,7 +82,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="90dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="64dp"
         android:background="@color/light_purple"
         android:ems="10"
         android:hint="Date"
@@ -113,7 +97,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="140dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="64dp"
         android:background="@color/light_purple"
         android:ems="10"
         android:hint="Return Date"
@@ -136,5 +120,44 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/fromWhere"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <ImageView
+        android:id="@+id/dateImage1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="24dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_baseline_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/departureDate"
+        app:layout_constraintTop_toBottomOf="@+id/changeDirection" />
+
+    <ImageView
+        android:id="@+id/dateImage2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="24dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_baseline_date"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/departureDate"
+        app:layout_constraintTop_toBottomOf="@+id/changeDirection" />
+
+    <Spinner
+        android:id="@+id/spinnerPassengers"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateImage2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

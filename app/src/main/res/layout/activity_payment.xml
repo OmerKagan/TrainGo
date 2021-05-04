@@ -9,29 +9,15 @@
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="44dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="13dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/buttonBuy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerTicket"
         app:srcCompat="@drawable/gray" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="123dp"
-        android:layout_marginTop="136dp"
-        android:text="Ticket/s"
-        android:textColor="@color/black"
-        android:textSize="36sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView12"
@@ -61,21 +47,34 @@
         android:id="@+id/buttonBuy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="50dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="136dp"
         android:text="BUY TICKET/S"
-        app:layout_constraintBottom_toTopOf="@+id/buttonBuyWithPoints"
-        app:layout_constraintEnd_toEndOf="@+id/buttonBuyWithPoints"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
     <Button
         android:id="@+id/buttonBuyWithPoints"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="86dp"
         android:text="BUY WITH TRAINGO POINTS"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonBuy" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerTicket"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

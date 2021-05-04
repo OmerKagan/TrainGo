@@ -6,106 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".View.User.MyPassengers">
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="204dp"
-        android:layout_marginEnd="32dp"
-        android:background="@color/light_purple"
-        android:text="Third Passenger"
-        android:textAlignment="textStart"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton3"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="387dp"
-        android:background="@color/light_purple"
-        android:text="First Passenger"
-        android:textAlignment="textStart"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAddPassenger"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="32dp"
-        android:background="@color/light_purple"
-        android:text="Second Passenger"
-        android:textAlignment="textStart"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:clickable="true"
-        app:backgroundTint="@color/red"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:srcCompat="@drawable/ic_baseline_delete_forever_24" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="6dp"
-        android:layout_marginBottom="1dp"
-        android:clickable="true"
-        app:backgroundTint="@color/red"
-        app:layout_constraintBottom_toBottomOf="@+id/textView6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:srcCompat="@drawable/ic_baseline_delete_forever_24" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="6dp"
-        android:layout_marginBottom="1dp"
-        android:clickable="true"
-        app:backgroundTint="@color/red"
-        app:layout_constraintBottom_toBottomOf="@+id/textView7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:srcCompat="@drawable/ic_baseline_delete_forever_24" />
-
     <Button
         android:id="@+id/buttonAddPassenger"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="231dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="100dp"
+        android:layout_marginBottom="48dp"
         android:text="Add New Passenger"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerMyPassengers" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMyPassengers"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

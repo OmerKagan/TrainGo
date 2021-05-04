@@ -1,5 +1,6 @@
 package com.omerkagandanaci.projecttrial3.Model;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -13,29 +14,50 @@ public class Ticket {
     // properties
     private String fromWhere;
     private String toWhere;
-    private Date departmentDate;
-    private Date arrivalDate;
+    private String departmentDate;
+    private String arrivalDate;
+    private String startTime;
+    private String endTime;
     private int compartmentNo;
     private String seat;
-    private Customer owner;
+    private Passenger owner;
     private double price;
     private String type;
     private ArrayList<Comment> comments;
+    private boolean expandable;
 
-    // constructor
-    public Ticket(String fromWhere, String toWhere, Date departmentDate, 
-        Date arrivalDate, int compartmentNo, String seat, Customer owner, double price){
-            
-            this.fromWhere = fromWhere;
-            this.toWhere = toWhere;
-            this.departmentDate = departmentDate;
-            this.arrivalDate = arrivalDate;
-            this.compartmentNo = compartmentNo;
-            this.seat = seat;
-            this.owner = owner; 
-            this.price = price;
-            this.type = "Future";
-            this.comments = null;
+    // constructors
+    public Ticket(String fromWhere, String toWhere, String departmentDate,
+                  String arrivalDate, String startTime, String endTime, int compartmentNo,
+                  String seat, Passenger owner, double price) {
+        this.fromWhere = fromWhere;
+        this.toWhere = toWhere;
+        this.departmentDate = departmentDate;
+        this.arrivalDate = arrivalDate;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.compartmentNo = compartmentNo;
+        this.seat = seat;
+        this.owner = owner;
+        this.price = price;
+        this.type = "Future";
+        this.comments = null;
+    }
+
+    public Ticket(String fromWhere, String toWhere, String departmentDate,
+                  String startTime, String endTime, int compartmentNo,
+                  String seat, Passenger owner, double price) {
+        this.fromWhere = fromWhere;
+        this.toWhere = toWhere;
+        this.departmentDate = departmentDate;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.compartmentNo = compartmentNo;
+        this.seat = seat;
+        this.owner = owner;
+        this.price = price;
+        this.type = "Future";
+        this.comments = null;
     }
 
     // default constructor
@@ -65,10 +87,12 @@ public class Ticket {
         
         Date currentDate;
         currentDate = new Date();
-        
-        if(getDepartmentDate().compareTo(currentDate) < 0 && getArrivalDate().compareTo(currentDate) < 0)
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String stringDate = formatter.format(currentDate);
+
+        if(getDepartmentDate().compareTo(stringDate) < 0 && getArrivalDate().compareTo(stringDate) < 0)
             this.type = "Old";
-        else if(getDepartmentDate().compareTo(currentDate) < 0 && getArrivalDate().compareTo(currentDate) >= 0)
+        else if(getDepartmentDate().compareTo(stringDate) < 0 && getArrivalDate().compareTo(stringDate) >= 0)
             this.type = "Current";
         else 
             this.type = "Future";
@@ -119,34 +143,6 @@ public class Ticket {
     }
 
     /**
-     * @return the departmentDate
-     */
-    public Date getDepartmentDate() {
-        return departmentDate;
-    }
-
-    /**
-     * @param departmentDate the departmentDate to set
-     */
-    public void setDepartmentDate(Date departmentDate) {
-        this.departmentDate = departmentDate;
-    }
-
-    /**
-     * @return the arrivalDate
-     */
-    public Date getArrivalDate() {
-        return arrivalDate;
-    }
-
-    /**
-     * @param arrivalDate the arrivalDate to set
-     */
-    public void setArrivalDate(Date arrivalDate) {
-        this.arrivalDate = arrivalDate;
-    }
-
-    /**
      * @return the compartmentNo
      */
     public int getCompartmentNo() {
@@ -177,14 +173,14 @@ public class Ticket {
     /**
      * @return the owner
      */
-    public Customer getOwner() {
+    public Passenger getOwner() {
         return owner;
     }
 
     /**
      * @param owner the owner to set
      */
-    public void setOwner(Customer owner) {
+    public void setOwner(Passenger owner) {
         this.owner = owner;
     }
 
@@ -201,9 +197,46 @@ public class Ticket {
     public void setPrice(double price) {
         this.price = price;
     }
+    /**
+     * @return the departmentDate
+     */
+    public String getDepartmentDate() {
+        return departmentDate;
+    }
+    public void setDepartmentDate(String departmentDate) {
+        this.departmentDate = departmentDate;
+    }
+    /**
+     * @return the arrivalDate
+     */
+    public String getArrivalDate() {
+        return arrivalDate;
+    }
+    public void setArrivalDate(String arrivalDate) {
+        this.arrivalDate = arrivalDate;
+    }
 
-    
-    
+    public String getStartTime() {
+        return startTime;
+    }
 
-    
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public boolean isExpandable() {
+        return expandable;
+    }
+
+    public void setExpandable(boolean expandable) {
+        this.expandable = expandable;
+    }
 }

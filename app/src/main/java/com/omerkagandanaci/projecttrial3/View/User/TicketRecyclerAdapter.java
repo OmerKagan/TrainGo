@@ -1,13 +1,19 @@
 package com.omerkagandanaci.projecttrial3.View.User;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,10 +28,13 @@ public class TicketRecyclerAdapter extends RecyclerView.Adapter<TicketRecyclerAd
 
     private Context context;
     private ArrayList<Ticket> tickets;
-
-    public TicketRecyclerAdapter(Context context, ArrayList<Ticket> tickets) {
+    private int type;//There are 3 different ticket display option so, we can specify by type variable
+    //Types: 0 for basic ticket display, 1 for ticket with cancel option, 2 for ticket with add comment option
+    //Constructor
+    public TicketRecyclerAdapter(Context context, ArrayList<Ticket> tickets, int type) {
         this.context = context;
         this.tickets = tickets;
+        this.type = type;
     }
 
     @NonNull
@@ -80,6 +89,8 @@ public class TicketRecyclerAdapter extends RecyclerView.Adapter<TicketRecyclerAd
         private TextView compartmentSeat;
         private LinearLayout linearLayout;
         private RelativeLayout expandableRelativeLayout;
+        private ImageView cancel;
+        private ImageView addComment;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -91,6 +102,8 @@ public class TicketRecyclerAdapter extends RecyclerView.Adapter<TicketRecyclerAd
             compartmentSeat = itemView.findViewById(R.id.seatText);
             linearLayout = itemView.findViewById(R.id.linearOfTicket);
             expandableRelativeLayout = itemView.findViewById(R.id.expandableRelativeOfTicket);
+            cancel = itemView.findViewById(R.id.cancelTicket);
+            addComment = itemView.findViewById(R.id.addComment);
 
             linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -100,6 +113,60 @@ public class TicketRecyclerAdapter extends RecyclerView.Adapter<TicketRecyclerAd
                     notifyItemChanged(getAdapterPosition());
                 }
             });
+
+            if (type == 1) {
+                addComment.setClickable(false);
+                addComment.setVisibility(View.INVISIBLE);
+
+            }
+
+            else if (type == 2) {
+                cancel.setClickable(false);
+                cancel.setVisibility(View.INVISIBLE);
+            }
+
+            else {
+                addComment.setClickable(false);
+                addComment.setVisibility(View.INVISIBLE);
+                cancel.setClickable(false);
+                cancel.setVisibility(View.INVISIBLE);
+            }
+
+            cancel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    showDialogMessage();
+                }
+            });
+
+            addComment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
         }
     }
+    private void showDialogMessage() {
+
+        AlertDialog.Builder dialog = new AlertDialog.Builder(context);
+        dialog.setTitle("Cancel");
+        dialog.setMessage("Do you want to cancel this ticket?");
+        dialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        dialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        dialog.show();
+        dialog.create();
+    }
+
+
 }

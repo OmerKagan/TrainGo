@@ -35,7 +35,7 @@ public class FutureTickets extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerFutureTickets);
         initData();
 
-        adapter = new TicketRecyclerAdapter(this, futureTickets);
+        adapter = new TicketRecyclerAdapter(this, futureTickets, 1);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);

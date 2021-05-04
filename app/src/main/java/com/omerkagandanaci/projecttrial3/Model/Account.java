@@ -23,4 +23,8 @@ public class Account {
     public boolean updatePassword() {
         return true;
     }
+
+    public String getEmail() {
+        return email;
+    }
 }

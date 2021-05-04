@@ -31,7 +31,7 @@ public class OldTickets extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerOldTickets);
         initData();
 
-        adapter = new TicketRecyclerAdapter(this, oldTickets);
+        adapter = new TicketRecyclerAdapter(this, oldTickets, 2);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
