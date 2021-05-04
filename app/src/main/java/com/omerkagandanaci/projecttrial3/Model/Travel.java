@@ -9,11 +9,11 @@ import java.util.Date;
 */ 
 public class Travel
 {    
-    private static int lastTravelNumber = 0;    
-    private String startingPoint;    
-    private String endingPoint;    
-    private Date startingDate;    
-    private Date endingDate;    
+    private static int lastTravelNumber = 0;
+    protected String startingPoint;
+    protected String endingPoint;
+    private Date startingDate;
+    private Date endingDate;
     private Train trainUsed;    
     private int travelNumber;
     
@@ -28,7 +28,12 @@ public class Travel
         lastTravelNumber++;
         
     }
-    
+
+    public Travel(String startingPoint, String endingPoint) {
+        this.startingPoint = startingPoint;
+        this.endingPoint = endingPoint;
+    }
+
     public String getStartingPoint(){
         
         return startingPoint;

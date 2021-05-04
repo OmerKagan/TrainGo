@@ -48,12 +48,12 @@ public class ListTravels extends AppCompatActivity {
     private void initData() {
 
         travels = new ArrayList<>();
-        travels.add(new TravelUser("07.00", "12.00", 12));
-        travels.add(new TravelUser("10.00", "15.00", 9));
-        travels.add(new TravelUser("12.00", "17.00", 7));
-        travels.add(new TravelUser("14.00", "19.00", 2));
-        travels.add(new TravelUser("17.00", "22.00", 14));
-        travels.add(new TravelUser("23.30", "07.30", 18));
+        travels.add(new TravelUser("Ankara", "Bursa","07.00", "12.00", 12));
+        travels.add(new TravelUser("Ankara", "Bursa","10.00", "15.00", 9));
+        travels.add(new TravelUser("Ankara", "Bursa","12.00", "17.00", 7));
+        travels.add(new TravelUser("Ankara", "Bursa","14.00", "19.00", 2));
+        travels.add(new TravelUser("Ankara", "Bursa","17.00", "22.00", 14));
+        travels.add(new TravelUser("Ankara", "Bursa","23.30", "07.30", 18));
     }
 
 }

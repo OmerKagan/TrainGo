@@ -47,14 +47,14 @@ public class ChooseSeat extends AppCompatActivity implements AdapterView.OnItemS
         recyclerView = findViewById(R.id.recyclerSeat);
 
         seats = new ArrayList<>();
-        seats.add(new Seat("1A"));
-        seats.add(new Seat("1B"));
-        seats.add(new Seat("1C"));
-        seats.add(new Seat("1D"));
-        seats.add(new Seat("2A"));
-        seats.add(new Seat("2B"));
-        seats.add(new Seat("2C"));
-        seats.add(new Seat("2D"));
+        seats.add(new Seat("1A", true));
+        seats.add(new Seat("1B", true));
+        seats.add(new Seat("1C", false));
+        seats.add(new Seat("1D", false));
+        seats.add(new Seat("2A", true));
+        seats.add(new Seat("2B",true));
+        seats.add(new Seat("2C", true));
+        seats.add(new Seat("2D", true));
 
         adapter = new SeatRecyclerAdapter(this, seats);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
@@ -74,7 +74,7 @@ public class ChooseSeat extends AppCompatActivity implements AdapterView.OnItemS
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(this, "Selected Compartment : " + (position + 1), Toast.LENGTH_LONG ).show();
+        Toast.makeText(this, "Selected Compartment : " + (position + 1), Toast.LENGTH_SHORT).show();
     }
 
     @Override

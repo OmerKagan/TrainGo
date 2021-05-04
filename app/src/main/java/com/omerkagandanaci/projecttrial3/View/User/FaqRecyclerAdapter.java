@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.omerkagandanaci.projecttrial3.Model.FaqModel;
-import com.omerkagandanaci.projecttrial3.Model.TravelUser;
 import com.omerkagandanaci.projecttrial3.R;
 
 import java.util.ArrayList;

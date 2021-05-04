@@ -36,14 +36,23 @@ public class SeatRecyclerAdapter extends RecyclerView.Adapter<SeatRecyclerAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.seatNo.setText(seats.get(position).getSeatNo());
+        Seat seat = seats.get(position);
 
-        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                holder.relativeLayout.setBackgroundColor(Color.RED);
-            }
-        });
+        holder.seatNo.setText(seat.getSeatNo());
+
+        if (seat.isEmpty()) {
+            holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    holder.relativeLayout.setBackgroundColor(Color.rgb(234, 188, 255));
+                }
+            });
+        }
+        else{
+            holder.relativeLayout.setBackgroundColor(Color.rgb(105, 105, 105));
+            holder.relativeLayout.setClickable(false);
+        }
+
 
     }
 

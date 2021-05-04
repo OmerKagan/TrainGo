@@ -72,7 +72,7 @@ public class PassengerRecyclerAdapter extends RecyclerView.Adapter<PassengerRecy
         private ImageView delete;
         private LinearLayout linearLayout;
         private RelativeLayout expandableRelativeLayout;
-        int clickedItemPosition;
+        private int clickedItemPosition;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

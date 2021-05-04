@@ -29,7 +29,6 @@ public class Customer extends Account{
     public void signUp() {}
     public void customerLogin() {}
     public void logout() {}
-    public void addNewPassenger(Passenger passenger) {}
     public void deletePassenger(Passenger passenger) {}
     public void setName(String name) {
         information.set(0, name);
@@ -43,7 +42,6 @@ public class Customer extends Account{
     public int getPoints() {
         return points;
     }
-    public void savePassenger(Passenger passenger) {}
     public void setInformation(String nameOfCus, String surnameOfCus, String TCIdOfCus, String birthDateOfCus, String phoneNoOfCus) {
         information = new ArrayList<String>();
         information.add(nameOfCus);

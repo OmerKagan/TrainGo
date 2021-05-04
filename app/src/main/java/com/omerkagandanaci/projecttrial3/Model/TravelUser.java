@@ -4,14 +4,15 @@ package com.omerkagandanaci.projecttrial3.Model;
  * @author Ömer Kağan Danacı
  * @version 01.05.2021
  */
-public class TravelUser {
+public class TravelUser extends Travel{
 
     private String startTime;
     private String endTime;
     private int numOfEmptySeats;
     private boolean expandable;
 
-    public TravelUser(String startTime, String endTime, int numOfEmptySeats) {
+    public TravelUser(String startingPoint, String endingPoint, String startTime, String endTime, int numOfEmptySeats) {
+        super(startingPoint, endingPoint);
         this.startTime = startTime;
         this.endTime = endTime;
         this.numOfEmptySeats = numOfEmptySeats;

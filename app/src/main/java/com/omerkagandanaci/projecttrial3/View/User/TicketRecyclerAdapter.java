@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,13 +12,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.omerkagandanaci.projecttrial3.Model.Ticket;
-import com.omerkagandanaci.projecttrial3.Model.TravelUser;
 import com.omerkagandanaci.projecttrial3.R;
 
 import java.util.ArrayList;
@@ -47,20 +46,8 @@ public class TicketRecyclerAdapter extends RecyclerView.Adapter<TicketRecyclerAd
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Ticket ticket = tickets.get(position);
-        String nameOfOwner;
-        nameOfOwner = ticket.getOwner().getName() + ticket.getOwner().getSurname();
-        holder.owner.setText(nameOfOwner);
-        holder.price.setText(ticket.getPrice() + " TL");
 
-        if (ticket.getArrivalDate() != null) {
-            holder.date.setText(ticket.getDepartmentDate() + " - " + ticket.getArrivalDate());
-        }
-        else {
-            holder.date.setText(ticket.getDepartmentDate());
-        }
-        holder.from.setText("From: " + ticket.getFromWhere() + " (" + ticket.getStartTime() + ")");
-        holder.to.setText("To: " + ticket.getToWhere() + " (" + ticket.getEndTime() + ")");
-        holder.compartmentSeat.setText("Compartment: " + ticket.getCompartmentNo() + " - " + "Seat " + ticket.getSeat());
+        holder.setTicketData(ticket, position);
 
         boolean isExpandable;
         isExpandable = tickets.get(position).isExpandable();
@@ -73,6 +60,12 @@ public class TicketRecyclerAdapter extends RecyclerView.Adapter<TicketRecyclerAd
         else {
             holder.expandableRelativeLayout.setVisibility(View.GONE);
         }
+    }
+
+    public void deleteItem(int position) {
+        tickets.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, tickets.size());
     }
 
     @Override
@@ -91,6 +84,7 @@ public class TicketRecyclerAdapter extends RecyclerView.Adapter<TicketRecyclerAd
         private RelativeLayout expandableRelativeLayout;
         private ImageView cancel;
         private ImageView addComment;
+        private int clickedItemPosition;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -142,15 +136,35 @@ public class TicketRecyclerAdapter extends RecyclerView.Adapter<TicketRecyclerAd
             addComment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    FragmentManager manager = ((AppCompatActivity)context).getSupportFragmentManager();
+                    CommentFragment commentFragment = new CommentFragment();
+                    commentFragment.show(manager, "CommentFragment");
                 }
             });
+
         }
+
+        public void setTicketData(Ticket ticket, int position) {
+            owner.setText(ticket.getOwner().getName() + " " + ticket.getOwner().getSurname());
+            price.setText(ticket.getPrice() + " TL");
+
+            if (ticket.getArrivalDate() != null) {
+                date.setText(ticket.getDepartmentDate() + " - " + ticket.getArrivalDate());
+            }
+            else {
+                date.setText(ticket.getDepartmentDate());
+            }
+            from.setText("From: " + ticket.getFromWhere() + " (" + ticket.getStartTime() + ")");
+            to.setText("To: " + ticket.getToWhere() + " (" + ticket.getEndTime() + ")");
+            compartmentSeat.setText("Compartment: " + ticket.getCompartmentNo() + " - " + "Seat " + ticket.getSeat());
+            clickedItemPosition = position;
+        }
+
     }
     private void showDialogMessage() {
 
         AlertDialog.Builder dialog = new AlertDialog.Builder(context);
-        dialog.setTitle("Cancel");
+        dialog.setTitle("Ticket Cancellation");
         dialog.setMessage("Do you want to cancel this ticket?");
         dialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override

@@ -61,7 +61,7 @@ public class Passenger {
         return isTcCitizen;
     }
 
-    public void setTcCitizen(boolean tcCitizen) {
+    public void setIsTCCitizen(boolean tcCitizen) {
         isTcCitizen = tcCitizen;
     }
 

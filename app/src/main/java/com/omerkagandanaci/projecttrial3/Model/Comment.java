@@ -78,7 +78,7 @@ public class Comment {
     /**
      * @param answers the answers to set
     */
-    public void setAnswers() {
+    public void setAnswers(int answers) {
         this.answers = answers + 1;
     }
 
