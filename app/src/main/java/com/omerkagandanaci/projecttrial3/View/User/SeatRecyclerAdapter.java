@@ -21,10 +21,28 @@ import java.util.ArrayList;
 public class SeatRecyclerAdapter extends RecyclerView.Adapter<SeatRecyclerAdapter.ViewHolder> {
     private Context context;
     private ArrayList<Seat> seats;
+    private String chosenSeat;
+    private boolean isClicked;
 
     public SeatRecyclerAdapter(Context context, ArrayList<Seat> list) {
         this.context = context;
         seats = list;
+    }
+
+    public String getChosenSeat() {
+        return chosenSeat;
+    }
+
+    public void setChosenSeat(String chosenSeat) {
+        this.chosenSeat = chosenSeat;
+    }
+
+    public boolean isClicked() {
+        return isClicked;
+    }
+
+    public void setClicked(boolean clicked) {
+        isClicked = clicked;
     }
 
     @NonNull
@@ -45,6 +63,8 @@ public class SeatRecyclerAdapter extends RecyclerView.Adapter<SeatRecyclerAdapte
                 @Override
                 public void onClick(View v) {
                     holder.relativeLayout.setBackgroundColor(Color.rgb(234, 188, 255));
+                    chosenSeat = holder.seatNo.getText().toString();
+                    isClicked = true;
 
                 }
             });
